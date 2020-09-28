@@ -1,0 +1,138 @@
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  width: calc(100% * (1/4));
+  height: 300px;
+  background-color: blue;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item .image {
+  overflow: hidden;
+}
+.portfolio-item:hover .desc{
+  opacity: 1
+}
+.desc {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  flex-direction: column;
+  opacity: 0;
+}
+.desc h3{
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  font-size: 16px;
+
+}
+.desc span{
+  color: #fff;
+}
+.portfolio-item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  ;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 200ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay .cancel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 75px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #666;
+  width: 800px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.popup .banner-img {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.popup .banner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #666;
+  font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: 20px;
+  opacity: 0.8;
+  transition: all 200ms;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #666;
+}
+
+.popup .close:hover {
+  opacity: 1;
+}
+
+.popup .content {
+  max-height: 400px;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.popup p {
+  margin: 0 0 1em;
+}
+
+.popup p:last-child {
+  margin: 0;
+}
+.content-right{
+  width: 200px;
+}
